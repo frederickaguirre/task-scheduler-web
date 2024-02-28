@@ -29,16 +29,16 @@ export class TaskFormComponent implements OnInit {
 
       this.http.post<any>('http://localhost:8080/api/tasks', formData).subscribe(
         response => {
-          console.log('Tarea enviada con éxito:', response);
-          // Aquí puedes manejar la respuesta de la API según lo necesites
+          console.log('Task send:', response);
+          alert("Task send");
         },
         error => {
-          console.error('Error al enviar la tarea:', error);
-          // Aquí puedes manejar el error según lo necesites
+          console.error('Error sending task:', error);
+          alert("Error sending task");
         }
       );
     } else {
-      console.error('El formulario es inválido. Por favor, complete todos los campos.');
+      console.error('Invalid form.');
     }
   }
 }
