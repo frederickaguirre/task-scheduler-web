@@ -1,0 +1,20 @@
+<form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h2 class="section-title">Task Scheduler</h2>
+        <div>
+          <label for="url">URL:</label>
+          <input type="text" id="url" formControlName="url">
+        </div>
+        <br>
+        <div>
+          <label for="cron">Cron:</label>
+          <input type="text" id="cron" formControlName="cron">
+        </div>
+        <br>
+        <button type="submit" [disabled]="!taskForm.valid">Send Task</button>
+      </div>
+    </div>
+  </div>
+</form>
